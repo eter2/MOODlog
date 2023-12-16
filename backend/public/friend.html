@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>친구 목록</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #friendsList {
+            list-style-type: none;
+            padding: 0;
+        }
+        #friendsList li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f3f3f3;
+            border: 1px solid #ddd;
+        }
+        #addFriendForm {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>친구 목록</h1>
+<ul id="friendsList"></ul>
+
+<div id="addFriendForm">
+    <input type="email" id="friendEmail" placeholder="친구의 이메일">
+    <button onclick="addFriend()">친구 추가</button>
+</div>
+
+<script>
+    async function fetchFriends(req) {
+        const userId = req.id; // 실제 사용자 ID로 대체
+        const response = await fetch(`/user/${userId}/friends`);
+        const friends = await response.json();
+
+        const friendsList = document.getElementById('friendsList');
+        friendsList.innerHTML = ''; // 목록을 먼저 비웁니다.
+        friends.forEach(friend => {
+            let listItem = document.createElement('li');
+            listItem.textContent = friend.username; // 또는 다른 필요한 정보
+            friendsList.appendChild(listItem);
+        });
+    }
+
+    async function addFriend() {
+        const userId = '사용자ID'; // 실제 사용자 ID로 대체
+        const email = document.getElementById('friendEmail').value;
+        // 여기에 친구 추가하는 POST 요청 코드를 작성합니다.
+        // 요청 후 친구 목록을 다시 불러오기
+        fetchFriends();
+    }
+
+    fetchFriends();
+</script>
+</body>
+</html>

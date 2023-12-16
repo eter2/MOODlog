@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.19",
+    "express-session": "^1.17.3",
+    "nunjucks": "^3.2.4"
+  }
+}

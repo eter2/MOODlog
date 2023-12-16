@@ -1,0 +1,24 @@
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #eeeeee;
+    border-radius: 50%;
+    display: flex;
+    margin-left: 1px;
+}
+
+.react-calendar__navigation__label {
+    background-color: #ffffff !important;
+}
+
+.react-calendar {
+    border-color: #ffffff !important;
+}
+
+.react-calendar__tile--now {
+    background-color: #ffffff !important;
+}
+
+.calendar {    
+    pointer-events : none;
+}

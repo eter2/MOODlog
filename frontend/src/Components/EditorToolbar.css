@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&display=swap');
+
+@font-face {
+    font-family: 'Middleschool_student';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Middleschool_student.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value="gothic"]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="gothic"]::before {
+  content: "나눔고딕";
+  font-family: "Nanum Gothic";
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value="myeongjo"]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="myeongjo"]::before {
+  content: "나눔명조";
+  font-family: "Nanum Myeongjo";
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value="pen"]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="pen"]::before {
+  content: "나눔손글씨펜";
+  font-family: "Nanum Pen Script";
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value="student"]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="student"]::before {
+  content: "중학생";
+  font-family: "Middleschool_student";
+}
+
+.ql-font-gothic {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.ql-font-myeongjo {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.ql-font-pen {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.ql-font-student {
+    font-family: 'Middleschool_student';
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const id = document.getElementById('id').value;
+                const password = document.getElementById('password').value;
+
+                fetch('http://localhost:3000/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id, password })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Login failed');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Login successful:', data);
+                    window.location.href = '/home.html';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Login failed');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <div>
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    <p>Not a member? <a href="register.html">Register here</a></p>
+</div>
+</body>
+</html>
